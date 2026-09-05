@@ -4,35 +4,7 @@ import { candidatos } from '../data/candidatos.js';
 const candidatoViewRouter = Router();
 
 candidatoViewRouter.get('/candidatos', (req, res) => {
-  res.send(
-    `
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candidatos</title>
-</head>
-<body>
-    <header>
-        <h1>
-            Lista de candidatos
-        </h1>
-    </header>
-    <main>
-        <section>
-            <h2>
-                Teste do servidor
-                ${
-                    candidatos.map(candidato => `<li>${candidato.nome} - ${candidato.numeroUrna} </li>`).join('')
-                }
-            </h2>
-        </section>
-    </main>
-</body>
-</html>
-    `
-  )
+  res.render('home', { titulo: 'Lista de Candidatos', candidatos })
 })
 
 candidatoViewRouter.get('/candidatos/:id', (req, res) => {
