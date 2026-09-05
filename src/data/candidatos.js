@@ -1,0 +1,26 @@
+const candidatos = [
+    {
+        id: 1,
+        nome: "Rick Sanches",
+        origem: "terra",
+        numeroUrna: 137,
+        foto: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    },
+    {
+        id: 2,
+        nome: "Morty Smith",
+        origem: "terra",
+        numeroUrna: 10,
+        foto: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    },
+    {
+        id: 3,
+        nome: "Summer Smith",
+        origem: "terra",
+        numeroUrna: 200,
+        foto: "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+    }
+]
+
+// Este tipo de exportação serve quando possuimos varios tipos de dados ou funções em um arquivo
+export { candidatos }

@@ -1,0 +1,27 @@
+{
+  "name": "eleicoes_fic",
+  "version": "1.0.0",
+  "description": "eleições ficticias senac",
+  "homepage": "https://github.com/KennedyMartinsB/eleicoes_fic#readme",
+  "bugs": {
+    "url": "https://github.com/KennedyMartinsB/eleicoes_fic/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennedyMartinsB/eleicoes_fic.git"
+  },
+  "license": "MIT",
+  "author": "KennedyMartinsB",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
