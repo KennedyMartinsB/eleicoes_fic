@@ -4,7 +4,7 @@ import { candidatos } from '../data/candidatos.js';
 const candidatoViewRouter = Router();
 
 candidatoViewRouter.get('/candidatos', (req, res) => {
-  res.render('home', { titulo: 'Lista de Candidatos', candidatos })
+  res.render('home', { titulo: 'Lista de Candidatos xxxx', candidatos })
 })
 
 candidatoViewRouter.get('/candidatos/:id', (req, res) => {

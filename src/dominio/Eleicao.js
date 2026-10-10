@@ -29,7 +29,12 @@ export class Eleicao {
     apurarVotos() {
         return this.candidatos.map((candidato) => {
             const recebidos = this.votos.filter((voto) => voto.numeroUrna === candidato.numero)
-            return { id: candidato.id, nome: candidato.nome, numero: candidato.numero, votos: recebidos.length }
+            return { 
+                id: candidato.id, 
+                nome: candidato.nome, 
+                numero: candidato.numero, 
+                votos: recebidos.length 
+            }
         })
     }
 

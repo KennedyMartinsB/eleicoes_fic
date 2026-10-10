@@ -13,7 +13,7 @@ candidatoRouter.get('/candidatos/:id', (req, res) => {
     const candidato = candidatos.find(c => c.numeroUrna === numero)
     if(candidato){
         res.status(200).json(candidato)
-    } else{
+    } else {
         res.status(404).json({error: 'Candidato não encontrado'})
     }
 })

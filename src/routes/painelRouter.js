@@ -7,7 +7,7 @@ const painelRouter = Router()
 
 painelRouter.get('/', exigirLogin, (req, res) => {
     const eleicao = new Eleicao()
-    res.render('painel', { titulo: 'Painel Administrativo', usuarop: req.session.usuarioLogado, relatorio: Eleicao.apurarVotos() })
+    res.render('painel', { titulo: 'Painel Administrativo', usuarop: req.session.usuarioLogado, relatorio: eleicao.apurarVotos() })
 })
 
 painelRouter.post('/cand-candidato', exigirLogin, (req, res) => {
@@ -24,4 +24,5 @@ painelRouter.post('/cand-candidato', exigirLogin, (req, res) => {
 
 function soma(){}
 
-export { painel, soma }
+// export { painel, soma }
+export default painelRouter
