@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { Eleicao } from '../dominio/Eleicao.js'
-import { exigirLogin } from '../middlewares/exigirLogin'
+import { exigirLogin } from '../middlewares/exigirLogin.js';
 
 const painelRouter = Router()
 

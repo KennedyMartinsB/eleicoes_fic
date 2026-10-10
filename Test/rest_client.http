@@ -1,0 +1,12 @@
+### Requisição Get
+GET http://localhost:3000/api/candidato/1
+
+### Requisição Delete
+DELETE http://localhost:3000/api/candidato/delete/1
+
+## Requisição de atualização parcial
+PATCH http://localhost:3000/api/candidato/1
+Content-Type: application/json
+{
+  "nome": "Rick"
+}
