@@ -18,6 +18,30 @@ candidatoRouter.get('/candidato/:id', (req, res) => {
     }
 })
 
+candidatoRouter.get('/candidato/', (req, res) => {
+    const { nome, origem, numeroUrna, foto } = req.body
+    if(!nome || !origem || !numeroUrna){
+        return res.status(400).json({ error: 'Os campos nome, origem e numeroUrna precisam ser preenchidos' })
+    }
+
+    const novoId = candidatos.length > 0 ? candidatos[candidatos.length - 1].id + 1 : 1
+
+    const novoCandidato = {
+        id: novoId,
+        nome,
+        origem,
+        numeroUrna: Number(numeroUrna),
+        foto: foto || 'https://rickandmortyapi.com/api/character/avatar/10.jpeg'
+    }
+
+    candidatos.push(novoCandidato)
+
+    return res.status(201).json({
+        message: 'Candidato cadastrado com sucesso!!!',
+        candidato: novoCandidato
+    })
+})
+
 candidatoRouter.delete('/candidato/delete/:id', (req, res) => {
     const candidatoId = parseInt(req.params.id)
     const index = candidatos.findIndex(c => c.id === candidatoId)
