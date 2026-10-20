@@ -22,7 +22,7 @@ export default class Candidato {
         return newCandidato;
     }
 
-    static getAllCandidatos() {
+    static getCandidatos() {
         return Candidato.candidatosDB;
     }
 
@@ -36,10 +36,29 @@ export default class Candidato {
         const index = Candidato.candidatosDB.some(c => c.id === idNum);
 
         if(index === -1){
-            return false;
+            return null
         }
 
         Candidato.candidatosDB.splice(index, 1);
         return true;
+    }
+
+    static editCandidato(id, data) {
+        const idNum = Number(id);
+        const index = Candidato.candidatosDB.findIndex(c => c.id === idNum);
+
+        if(index === -1){
+            return null;
+        }
+
+        const { nome, origem, numeroUrna, foto } = data;
+        Candidato.candidatosDB[index] = new Candidato(
+            idNum,
+            nome || Candidato.candidatosDB[index].nome,
+            origem || Candidato.candidatosDB[index].origem,
+            numeroUrna || Candidato.candidatosDB[index].numeroUrna,
+            foto || Candidato.candidatosDB[index].foto,
+        )
+        return Candidato.candidatosDB[index];
     }
 }
